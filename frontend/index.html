@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Healthcare Chatbot - Medical Assistant</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="chat-header">
+            <div class="header-content">
+                <div class="logo-section">
+                    <i class="fas fa-heartbeat logo-icon"></i>
+                    <div>
+                        <h1>AI Healthcare Assistant</h1>
+                        <p>Powered by Groq AI | 24/7 Medical Support</p>
+                    </div>
+                </div>
+                <i class="fas fa-heart pulse-icon"></i>
+            </div>
+        </header>
+
+        <!-- Disclaimer -->
+        <div class="disclaimer">
+            <i class="fas fa-exclamation-triangle"></i>
+            <div>
+                <strong>Important:</strong> This chatbot provides general health information only and is not a substitute for professional medical advice, diagnosis, or treatment.
+            </div>
+        </div>
+
+        <!-- Chat Messages -->
+        <div class="chat-container" id="chatContainer">
+            <div class="message bot-message">
+                <div class="message-icon bot-icon">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <div class="message-content">
+                    <p>Hello! I'm your AI Healthcare Assistant powered by advanced AI. I can help you understand symptoms, provide general health information, and guide you to appropriate care. How can I assist you today?</p>
+                    <span class="timestamp"></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Questions -->
+        <div class="quick-questions">
+            <p class="quick-label">Quick questions:</p>
+            <div class="question-buttons">
+                <button class="quick-btn" onclick="setInput('I have a fever and headache')">I have a fever and headache</button>
+                <button class="quick-btn" onclick="setInput('What are signs of dehydration?')">What are signs of dehydration?</button>
+                <button class="quick-btn" onclick="setInput('How to manage stress and anxiety?')">How to manage stress and anxiety?</button>
+                <button class="quick-btn" onclick="setInput('Tips for better sleep quality')">Tips for better sleep quality</button>
+            </div>
+        </div>
+
+        <!-- Input Area -->
+        <div class="input-container">
+            <button class="voice-btn" id="voiceBtn" onclick="toggleVoice()">
+                <i class="fas fa-microphone"></i>
+            </button>
+            <input 
+                type="text" 
+                id="userInput" 
+                placeholder="Describe your symptoms or ask a health question..."
+                onkeypress="handleKeyPress(event)"
+            >
+            <button class="send-btn" onclick="sendMessage()">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+
+        <!-- Footer -->
+        <footer class="chat-footer">
+            <p>Available 24/7 | Powered by Groq AI (Llama 3.3 70B) | Secure & Private</p>
+        </footer>
+    </div>
+
+    <script src="js/speech.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
